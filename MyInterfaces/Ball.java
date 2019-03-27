@@ -11,7 +11,7 @@ public class Ball extends Block {
 	@Override
 	public double getVolume() {
 
-		return 4/3*Math.PI*Math.pow(radius, 3);
+		return (4.0/3.0)*Math.PI*Math.pow(radius, 3);
 	}
 
 	@Override
