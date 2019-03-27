@@ -11,6 +11,7 @@ public class MainFigures {
 		blocks[2] = new Cube(3);
 		blocks[3] = new Cube(1.5);
 		
+		System.out.println("\nSurface of our blocks:");
 		for(Block b: blocks) {
 			System.out.println(b.getKind()+": "+b.getSurface());
 		}
