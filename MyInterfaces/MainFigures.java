@@ -1,6 +1,7 @@
 package zajecia;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class MainFigures {
 	public static void main (String[] args) {
@@ -19,6 +20,22 @@ public class MainFigures {
 		System.out.println("\nSorted table (by surface):");
 		for(Block b: blocks) {
 			System.out.println(b.getKind()+": "+b.getSurface());
+		}
+		
+		Arrays.sort(blocks,new Comparator<Block>() {
+			
+			@Override
+			public int compare(Block firstBlock, Block secondBlock) {
+				
+				return Double.valueOf(firstBlock.getVolume()).compareTo(Double.valueOf(secondBlock.getVolume()));
+			}
+			
+			
+		});
+		
+		System.out.println("\nSorted table (by volume):");
+		for(Block b: blocks) {
+			System.out.println(b.getKind()+": "+b.getVolume());
 		}
 		
 		
