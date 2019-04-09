@@ -1,12 +1,24 @@
-package Source;
+package source;
 
-public abstract class Pojazd implements Dane_ogolne,Dane_techniczne,Comparable<Pojazd> {
-	protected String marka="";
-	protected int masa=0;
+public abstract class Pojazd implements DaneOgolne, DaneTechniczne,Comparable<Pojazd> {
+
+	int masa = 0;
+	String marka = "";
+	
 	
 	@Override
-	public int compareTo(Pojazd arg) {
-		return Integer.valueOf(this.getMasaCalkowita()).compareTo(Integer.valueOf(arg.getMasaCalkowita()));
-		
+	public int getMasa() {
+		return masa;
 	}
+
+	@Override
+	public String getMarka() {
+		return marka;
+	}
+	
+	@Override
+	public int compareTo(Pojazd p) {
+		return Integer.valueOf(this.getMasa()).compareTo(Integer.valueOf(p.getMasa()));
+	}
+
 }
