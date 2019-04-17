@@ -2,6 +2,7 @@ package showimg;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -59,9 +60,11 @@ public class MainGUI extends JFrame {
 					path = fch.getSelectedFile().getAbsolutePath();
 					lSciezka.setText(path);
 				}
-				
+				//Wyœwietlam obrazek
 				ImageIcon img = new ImageIcon(path);
-				lObrazek.setIcon(img);
+				Image image = img.getImage();
+				Image resclaedImg = image.getScaledInstance(120, 120, Image.SCALE_SMOOTH);
+				lObrazek.setIcon(new ImageIcon(resclaedImg));
 			}
 		});
 		pGuziki.add(bLaduj);
