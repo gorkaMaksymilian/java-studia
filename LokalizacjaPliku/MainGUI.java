@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -59,6 +60,8 @@ public class MainGUI extends JFrame {
 					lSciezka.setText(path);
 				}
 				
+				ImageIcon img = new ImageIcon(path);
+				lObrazek.setIcon(img);
 			}
 		});
 		pGuziki.add(bLaduj);
